@@ -19,7 +19,7 @@ const Post = ({ id, title, author, path, date, body, fluid }) => {
         <span className="card-author">{author}</span>
       </CardSubtitle>
       <CardText className="card-body">{body}</CardText>
-      <Link to={path} className="btn btn-outline-primary float-right text-uppercase">Read More</Link>
+      <Link to={path} className="btn btn-outline-danger float-right text-uppercase">Read More</Link>
     </CardBody>
   </Card>
   )

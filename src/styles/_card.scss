@@ -1,5 +1,6 @@
 .card {
     margin-bottom: 30px;
+    border-radius: 25px;
   }
   ul.post-tags {
     padding: 0;
@@ -10,3 +11,8 @@
       margin-right: 10px;
     }
   }
+
+.card-image-top{
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
