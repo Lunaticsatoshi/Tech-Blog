@@ -29,3 +29,7 @@ h1 {
 .btn_med :hover{
     filter: brightness(90%);
 }
+
+.blog{
+    padding-top: 140px;
+}

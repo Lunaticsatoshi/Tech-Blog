@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { Card, CardTitle, CardText, CardSubtitle, CardBody } from 'reactstrap'
-import './post.css'
 import Img from 'gatsby-image'
-import '../../styles/index.scss'
+import '../../styles/index.scss';
 
 const Post = ({ id, title, author, path, date, body, fluid }) => {
 

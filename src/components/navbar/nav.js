@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { link, Link } from 'gatsby';
+import {Link } from 'gatsby';
 import onClickOutside from 'react-onclickoutside';
 import { window } from 'browser-monads'
 import logo from '../../images/logo.svg';
-import './nav.css'
 
 const Nav = () => {
 
@@ -12,7 +11,7 @@ const Nav = () => {
     const toggle = () => setIsOpen(!isOpen);
 
     Nav.handleClickOutside = () => setIsOpen(false)
-    
+
 
     return (
         <nav className="navbar">
@@ -21,13 +20,17 @@ const Nav = () => {
                     <img src={logo} alt="Blog Logo" className="nav_item--logo"></img>
                 </a>
             </div>
-            <div className = "hamburger" onClick = {toggle}>
-                <span className = "bar"></span>
-                <span className = "bar"></span>
-                <span className = "bar"></span>
+            <div className="hamburger" onClick={toggle}>
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
             </div>
-            <div className= {isOpen ? "navbar-links -active" : "navbar-links"}>
+            <div className={isOpen ? "navbar-links -active" : "navbar-links"}>
                 <ul>
+                    <li>
+                        <Link className={window.location.href.indexOf('blog') > 0 ? 'nav_item--link active' : 'nav_item--link'}
+                            to='/blog'>Blogs</Link>
+                    </li>
                     <li>
                         <Link className={window.location.href.indexOf('about') > 0 ? 'nav_item--link active' : 'nav_item--link'}
                             to='/about'>About</Link>
