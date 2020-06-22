@@ -16,3 +16,21 @@
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
 }
+
+.card-title{
+  font-family: Baskerville, serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: black;
+  line-height: 35px;
+  Link{
+    text-decoration: none;
+  }
+}
+
+.card-body{
+  font-family: Muli, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 300;
+}

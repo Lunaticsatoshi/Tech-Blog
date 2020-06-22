@@ -4,6 +4,12 @@ date: 2020-06-05 07:00:00
 author: 'Lunaticsatoshi'
 path: '/second-post'
 image: ../../images/Flutter.jpg
+tags:
+- code
+- design
+- tech
+- native development
+- flutter
 ---
 
 Flutter is an open-source UI software development kit created by Google. It is used to develop applications for Android, iOS, Windows, Mac, Linux, Google Fuchsia and the web.

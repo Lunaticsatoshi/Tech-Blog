@@ -22,9 +22,10 @@ const Blog = () => {
                                                 title={node.frontmatter.title}
                                                 author={node.frontmatter.author}
                                                 path={node.frontmatter.path}
-                                                date={node.frontmatter.data}
+                                                date={node.frontmatter.date}
                                                 body={node.excerpt}
                                                 fluid={node.frontmatter.image.childImageSharp.fluid}
+                                                tags={node.frontmatter.tags}
                                             />
                                         )
                                         )}
@@ -53,6 +54,7 @@ query {
          date
          author
          path
+         tags
          image{
            childImageSharp{
              fluid(maxWidth: 600){
