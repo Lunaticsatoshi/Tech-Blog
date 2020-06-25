@@ -19,3 +19,32 @@
     border-radius: 25px;
     padding: 5px;
   }
+
+  .btn_med{
+    width: 124px;
+    height: 38px;
+    border-radius: 25px;
+    background-color: red;
+    color: #ffffff;
+    border: none;
+    font-family: Muli, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    transition: all 0.3s ease 0s;
+}
+
+.btn_med :hover{
+  filter: brightness(90%);
+}
+
+.blog{
+  padding-top: 140px;
+}
+
+.advert-title{
+  font-size: 25px;
+}
+
+.recent-title{
+  font-size: 20px;
+}
