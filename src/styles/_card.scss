@@ -1,5 +1,6 @@
 .card {
     margin-bottom: 30px;
+    margin-top: 30px;
     border-radius: 10px;
   }
   ul.post-tags {
@@ -21,7 +22,6 @@
   font-family: Baskerville, serif;
   font-size: 30px;
   font-weight: 400;
-  color: black;
   line-height: 35px;
   Link{
     text-decoration: none;
@@ -33,4 +33,13 @@
   font-size: 18px;
   line-height: 24px;
   font-weight: 300;
+}
+
+.card-subtitle{
+  margin-bottom: 20px;
+}
+
+.text-info{
+  color: red;
+  text-decoration-color: red;
 }

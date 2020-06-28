@@ -1,25 +1,20 @@
 import React from 'react';
 import { graphql, StaticQuery } from "gatsby";
-import { Row, Col } from "reactstrap";
-import Post from "../components/post/post";
-import Sidebar from "../components/sidebar/sidebar";
-import Layout from "../components/layout";
-import NavBar from "../components/NavigationBar/navbar"
-import SEO from "../components/seo";
+import Cards from "../card/card";
 
-const Blog = () => {
+const LatestPost = () => {
     return (
-        <Layout>
-        <SEO title="Blogs" />
-        <NavBar/>
-        <div className="blog">
-        <Row>
-          <Col md="8">
+        <div className = "post-container">
+            <div className = "section-head">
+                <h3 className = "section-title">Latest Post</h3>
+            </div>
+            <div className="division"></div>
+            <div  className = 'section-content'>
             <StaticQuery query={indexQuery} render={data => {
               return (
                 <div>
                   {data.allMarkdownRemark.edges.map(({ node }) => (
-                    <Post className="post-card"
+                    <Cards className="post-card"
                       id={node.id}
                       title={node.frontmatter.title}
                       author={node.frontmatter.author}
@@ -34,23 +29,17 @@ const Blog = () => {
                 </div>
               );
             }} />
-          </Col>
-          <Col md="4">
-            <div>
-              <Sidebar/>
             </div>
-          </Col>
-        </Row>
-      </div>
-      </Layout>
+        </div>
     )
 }
 
 const indexQuery = graphql`
 query {
   allMarkdownRemark(
-    sort: { fields: [frontmatter___date], order: DESC})
-    {
+    sort: { fields: [frontmatter___date], order: DESC}
+    limit: 4
+    ){
    edges{
      node{
        id
@@ -61,7 +50,7 @@ query {
          tags
          image{
            childImageSharp{
-             fluid(maxWidth: 600){
+             fluid(maxWidth: 300){
                ...GatsbyImageSharpFluid
              }
            }
@@ -77,4 +66,4 @@ query {
  }
 `
 
-export default Blog;
+export default LatestPost;

@@ -1,75 +1,41 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import Avatar from '@material-ui/core/Avatar';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import BackgroundImage from 'gatsby-background-image';
+import { slugify } from '../../util/utilityfunctions';
+import { Link } from 'gatsby';
+import { Badge } from 'reactstrap';
+import Grid from '@material-ui/core/Grid';
+import Img from 'gatsby-image';
 
-const useStyles = makeStyles({
-    root: {
-        maxWidth: 345,
-    },
-    media: {
-        height: 140,
-    },
-    avatar: {
-        backgroundColor: red[500],
-      },
-});
-
-const Cards = () => {
-    const classes = useStyles();
+const Cards = ({ id, title, author, slug, date, body, fluid, tags }) => {
     return (
-        <Card className={classes.root}>
-            <CardHeader
-                avatar={
-                    <Avatar aria-label="recipe" className={classes.avatar}>
-                        R
-          </Avatar>
-                }
-                action={
-                    <IconButton aria-label="settings">
-                        <MoreVertIcon />
-                    </IconButton>
-                }
-                title="Shrimp and Chorizo Paella"
-                subheader="September 14, 2016"
-            />
-            <CardActionArea>
-                <CardMedia
-                    className={classes.media}
-                    image="/static/images/cards/contemplative-reptile.jpg"
-                    title="Contemplative Reptile"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        Lizard
-              </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
-              </Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <IconButton aria-label="add to favorites">
-                    <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                    <ShareIcon />
-                </IconButton>
-            </CardActions>
-        </Card>
-    );
+        <div className= "card-container" key={id}>
+            <Grid container>
+                <Grid items xs={12} md={6}>
+                    <Img fluid={fluid} className="image-card-top" />
+                </Grid>
+                <Grid items xs={12} md={6}>
+                    <div className="content-body">
+                        <div className = "body-contents">
+                        <Link to={slug} className="card-title">{title}</Link>
+                        <p> by{''}<span className="card-author">{author}</span></p>
+                        <ul className="post-tags">
+                            {tags.map(tag => (
+                                <li key={tag}>
+                                    <Link to={`/tags/${slugify(tag)}`}>
+                                        <Badge color="primary" className="text-uppercase">
+                                            {tag}
+                                        </Badge>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                        <div className="body">{body}</div>
+                        </div>
+                    </div>
+                </Grid>
+            </Grid>
+        </div>
+    )
 }
 
 export default Cards;
