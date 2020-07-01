@@ -15,7 +15,7 @@ const NavBar = () => {
         <div>
             <div className={isOpen ? "overlay menu-open" : "overlay"}></div>
             <div className="container">
-                <div class="hamburger" onClick={toggle}>
+                <div className="hamburger" onClick={toggle}>
                     <span className="bar"></span>
                     <span className="bar"></span>
                     <span className="bar"></span>
@@ -26,28 +26,20 @@ const NavBar = () => {
                     </a>
                     <ul>
                         <li>
-                            <a>
-                                <Link className={window.location.href.indexOf('blog') > 0 ? 'link active' : 'link'}
-                                    to='/blog'>Blogs</Link>
-                            </a>
+                            <Link className={window.location.href.indexOf('blog') > 0 ? 'link active' : 'link'}
+                                to='/blog'>Blogs</Link>
                         </li>
                         <li>
-                            <a>
-                                <Link className={window.location.href.indexOf('about') > 0 ? 'link active' : 'link'}
-                                    to='/about'>About</Link>
-                            </a>
+                            <Link className={window.location.href.indexOf('about') > 0 ? 'link active' : 'link'}
+                                to='/about'>About</Link>
                         </li>
                         <li>
-                            <a>
-                                <Link className={window.location.href.indexOf('tags') > 0 ? 'link active' : 'link'}
-                                    to='/tags'>Tags</Link>
-                            </a>
+                            <Link className={window.location.href.indexOf('tags') > 0 ? 'link active' : 'link'}
+                                to='/tags'>Tags</Link>
                         </li>
                         <li>
-                            <a>
-                                <Link className={window.location.href.indexOf('projects') > 0 ? 'link active' : 'link'}
-                                    to='/projects'>Projects</Link>
-                            </a>
+                            <Link className={window.location.href.indexOf('projects') > 0 ? 'link active' : 'link'}
+                                to='/projects'>Projects</Link>
                         </li>
                     </ul>
                 </nav>

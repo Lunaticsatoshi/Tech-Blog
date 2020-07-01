@@ -115,3 +115,20 @@
   font-size: 20px;
   font-weight: 500;
 }
+
+.tags{
+  list-style: none;
+}
+
+.tags-btn{
+    width: 230px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: red;
+    color: #ffffff;
+    border: none;
+    font-family: Muli, sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    transition: all 0.3s ease 0s;
+}

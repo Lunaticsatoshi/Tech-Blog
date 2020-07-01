@@ -8,11 +8,11 @@ import NavBar from "../components/NavigationBar/navbar"
 import SEO from "../components/seo";
 
 const Blog = () => {
-    return (
-        <Layout>
-        <SEO title="Blogs" />
-        <NavBar/>
-        <div className="blog">
+  return (
+    <Layout>
+      <SEO title="Blogs" />
+      <NavBar />
+      <div className="blog">
         <Row>
           <Col md="8">
             <StaticQuery query={indexQuery} render={data => {
@@ -23,7 +23,7 @@ const Blog = () => {
                       id={node.id}
                       title={node.frontmatter.title}
                       author={node.frontmatter.author}
-                      slug ={node.fields.slug}
+                      slug={node.fields.slug}
                       date={node.frontmatter.date}
                       body={node.excerpt}
                       fluid={node.frontmatter.image.childImageSharp.fluid}
@@ -37,13 +37,13 @@ const Blog = () => {
           </Col>
           <Col md="4">
             <div>
-              <Sidebar/>
+              <Sidebar />
             </div>
           </Col>
         </Row>
       </div>
-      </Layout>
-    )
+    </Layout>
+  )
 }
 
 const indexQuery = graphql`

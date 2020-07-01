@@ -8,7 +8,7 @@ const Sidebar = ({ authorImageFluid, postAuthor }) => (
     <div>
         {postAuthor && (
             <Card>
-                <Img className="card-image-top" fluid={authorImageFluid} />
+                <Img className="author-image" fluid={authorImageFluid} />
                 <CardBody>
                     <CardTitle className="text-center text-uppercase mb-3 author-name">
                         {postAuthor.name}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Footer = () => {
     return (
@@ -13,27 +13,27 @@ const Footer = () => {
                 <ul className = "social-links-list">
                     <li>
                         <a href = "#" className = "facebook" target = "_blank" rel = "noopener noreferrer">
-                        <i class="fab fa-facebook fa-3x"></i>
+                        <i className="fab fa-facebook fa-3x"></i>
                         </a>
                     </li>
                     <li>
                         <a href = "#" className = "instagram" target = "_blank" rel = "noopener noreferrer">
-                        <i class="fab fa-instagram fa-3x"></i>
+                        <i className="fab fa-instagram fa-3x"></i>
                         </a>
                     </li>
                     <li>
                         <a href = "#" className = "twitter" target = "_blank" rel = "noopener noreferrer">
-                        <i class="fab fa-twitter fa-3x"></i>
+                        <i className="fab fa-twitter fa-3x"></i>
                         </a>
                     </li>
                     <li>
                         <a href = "#" className = "google" target = "_blank" rel = "noopener noreferrer">
-                        <i class="fab fa-google fa-3x"></i>
+                        <i className="fab fa-google fa-3x"></i>
                         </a>
                     </li>
                     <li>
                         <a href = "#" className = "linkedin" target = "_blank" rel = "noopener noreferrer">
-                        <i class="fab fa-linkedin-in fa-3x"></i>
+                        <i className="fab fa-linkedin-in fa-3x"></i>
                         </a>
                     </li>
                 </ul>

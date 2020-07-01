@@ -9,10 +9,18 @@ import Img from 'gatsby-image';
 import { Row, Col } from "reactstrap";
 import { slugify } from '../util/utilityFunctions';
 import authors from '../util/authors';
+import { DiscussionEmbed } from 'disqus-react';
 
 const SinglePost = ({ data, pageContext, location }) => {
     const post = data.markdownRemark.frontmatter;
     const author = authors.find(x => x.name === post.author);
+    const baseUrl = 'https://github.com/Lunaticsatoshi/';
+    const disqusShortName ='hentailolicon';
+    const disqusConfig = {
+      identifier: data.markdownRemark.id,
+      title: post.title,
+      url: baseUrl + pageContext.slug,
+    }
     return (
         <Layout>
             <SEO title="SinglePost" />
@@ -41,6 +49,29 @@ const SinglePost = ({ data, pageContext, location }) => {
                                 <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} className="card-body"/>
                             </CardBody>
                         </Card>
+                        <h3 className = "text-center">
+                          Share Post
+                        </h3>
+                        <div className="text-center social-share-links">
+                          <ul>
+                            <li>
+                              <a href={'https://www.facebook.com/sharer/sharer.php?u=' + baseUrl + pageContext.slug } className="facebook" target="_blank" rel="noopener noreferrer">
+                                <i className="fab fa-facebook-f fa-2x" />
+                              </a>
+                            </li>
+                            <li>
+                              <a href={'https://www.twitter.com/share?u=' + baseUrl + pageContext.slug + '&text=' + post.title + '&via' +'Lunaticsatoshi' } className="twitter" target="_blank" rel="noopener noreferrer">
+                                <i className="fab fa-twitter fa-2x" />
+                              </a>
+                            </li>
+                            <li>
+                              <a href={'https://www.linkedin.com/shareArticle?url=' + baseUrl + pageContext.slug } className="linkedin" target="_blank" rel="noopener noreferrer">
+                                <i className="fab fa-linkedin fa-2x" />
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                        <DiscussionEmbed shortname={disqusShortName} config={disqusConfig} />
                     </Col>
                     <Col md="4">
                         <Sidebar authorImageFluid={data.file.childImageSharp.fluid} postAuthor = {author}/>
