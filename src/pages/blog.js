@@ -6,16 +6,22 @@ import Sidebar from "../components/sidebar/sidebar";
 import Layout from "../components/layout";
 import NavBar from "../components/NavigationBar/navbar"
 import SEO from "../components/seo";
+import Pagination from "../components/pagination/paginationLinks";
 
 const Blog = () => {
+  const postsPerPage = 2;
+  let numberOfPages;
   return (
     <Layout>
-      <SEO title="Blogs" />
+      <SEO title="Blogs" keywords={[`gatsby`, `application`, `react`]}/>
       <NavBar />
       <div className="blog">
         <Row>
           <Col md="8">
             <StaticQuery query={indexQuery} render={data => {
+              numberOfPages = Math.ceil(
+                data.allMarkdownRemark.totalCount / postsPerPage
+              )
               return (
                 <div>
                   {data.allMarkdownRemark.edges.map(({ node }) => (
@@ -42,6 +48,7 @@ const Blog = () => {
           </Col>
         </Row>
       </div>
+      <Pagination currentPage={1} numberOfPages={numberOfPages} />
     </Layout>
   )
 }
@@ -49,7 +56,9 @@ const Blog = () => {
 const indexQuery = graphql`
 query {
   allMarkdownRemark(
-    sort: { fields: [frontmatter___date], order: DESC})
+    sort: { fields: [frontmatter___date], order: DESC}
+    limit: 2
+    )
     {
    edges{
      node{

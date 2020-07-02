@@ -1,23 +1,23 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
+import Post from '../components/post/post';
 import { Row, Col } from "reactstrap";
 import Sidebar from "../components/sidebar/sidebar";
-import Post from '../components/post/post';
-import NavBar from "../components/NavigationBar/navbar"
+import NavBar from "../components/NavigationBar/navbar";
+import Pagination from "../components/pagination/paginationLinks";
 
-const tagPosts = ({ data, pageContext }) => {
-    const { tag } = pageContext;
-    const { totalCount } = data.allMarkdownRemark;
-    const pageHeader = `Found ${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${tag}"`
+const postList = (props) => {
+    const posts = props.data.allMarkdownRemark.edges;
+    const { currentPage, numberOfPages } = props.pageContext;
     return (
         <Layout>
             <NavBar />
             <div className="blog">
-                <h1> {pageHeader} </h1>
+                <h1> {`Page: ${currentPage}`} </h1>
                 <Row>
                     <Col md="8">
-                        {data.allMarkdownRemark.edges.map(({ node }) => (
+                        {posts.map(({ node }) => (
                             <Post
                                 key={node.id}
                                 slug={node.fields.slug}
@@ -36,18 +36,19 @@ const tagPosts = ({ data, pageContext }) => {
                         </div>
                     </Col>
                 </Row>
+                <Pagination currentPage={currentPage} numberOfPages={numberOfPages} />
             </div>
         </Layout>
     )
 }
 
-export const tagQuery = graphql`
-  query($tag: String!) {
+export const postListQuery = graphql`
+  query postListQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
+      limit: $limit
+      skip: $skip
     ) {
-      totalCount
       edges {
         node {
           id
@@ -74,4 +75,4 @@ export const tagQuery = graphql`
   }
 `
 
-export default tagPosts;
+export default postList;
