@@ -19,7 +19,7 @@ const Sidebar = ({ authorImageFluid, postAuthor }) => (
                             <li>
                                 <a
                                     href={postAuthor.linkedIn}
-                                    targe="_blank"
+                                    target="_blank"
                                     rel="noopener noreferrer"
                                     className="linkedin"
                                 >
@@ -29,11 +29,11 @@ const Sidebar = ({ authorImageFluid, postAuthor }) => (
                             <li>
                                 <a
                                   href={postAuthor.github}
-                                  targe="_blank"
+                                  target="_blank"
                                   rel="noopener noreferrer"
                                   className="linkedin"
                                 >
-                                <i class="fab fa-github fa-lg"></i>
+                                <i className="fab fa-github fa-lg"></i>
                                 </a>
                             </li>
                         </ul>
