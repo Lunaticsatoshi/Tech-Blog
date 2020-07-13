@@ -7,6 +7,7 @@ import Layout from "../components/layout";
 import NavBar from "../components/NavigationBar/navbar"
 import SEO from "../components/seo";
 import Pagination from "../components/pagination/paginationLinks";
+import TagCard from "../components/tagcard/tagcard";
 
 const Blog = () => {
   const postsPerPage = 2;
@@ -43,12 +44,13 @@ const Blog = () => {
           </Col>
           <Col md="4">
             <div>
+              <TagCard />
               <Sidebar />
             </div>
           </Col>
         </Row>
+        <Pagination currentPage={1} numberOfPages={numberOfPages} />
       </div>
-      <Pagination currentPage={1} numberOfPages={numberOfPages} />
     </Layout>
   )
 }

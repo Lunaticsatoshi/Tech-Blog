@@ -8,32 +8,19 @@ import Img from 'gatsby-image';
 
 const Cards = ({ id, title, author, slug, date, body, fluid, tags }) => {
     return (
-        <div className= "card-container" key={id}>
-            <Grid container>
-                <Grid items xs={12} md={6}>
-                    <Img fluid={fluid} className="image-card-top" />
-                </Grid>
-                <Grid items xs={12} md={6}>
-                    <div className="content-body">
-                        <div className = "body-contents">
-                        <Link to={slug} className="card-title">{title}</Link>
-                        <p> by{''}<span className="card-author">{author}</span></p>
-                        <ul className="post-tags">
-                            {tags.map(tag => (
-                                <li key={tag}>
-                                    <Link to={`/tag/${slugify(tag)}`}>
-                                        <Badge color="primary" className="text-uppercase">
-                                            {tag}
-                                        </Badge>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                        <div className="body">{body}</div>
-                        </div>
-                    </div>
-                </Grid>
-            </Grid>
+        <div className="blog-post" key={id}>
+            <div className="blog-post__img">
+                <Img fluid={fluid} className="image-card-top" />
+            </div>
+            <div className="blog-post__info">
+                <div className="blog-post__date">
+                    <span>{date}</span>
+                </div>
+                <h1 className="blog-post__title"><Link to={slug} className="card-title">{title}</Link></h1>
+                <p> by{''}<span className="card-author">{author}</span></p>
+                <p className="blog-post__text">{body}</p>
+                <Link className="btn_med blog-post__cta" to={slug}>Read More</Link>
+            </div>
         </div>
     )
 }

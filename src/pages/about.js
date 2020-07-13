@@ -16,14 +16,14 @@ const AboutPage = () => (
     <NavBar />
     <div className="blog">
       <section className="about">
-        <div className="post-container">
-          <h1>Our Team</h1>
-          <div className="division"></div>
-          <Row>
-            <Col md="8">
+        <Row>
+          <Col md="8">
+            <div className="post-container">
+              <h1>Our Team</h1>
+              <div className="division"></div>
               <Row className="mb-4">
                 <div className="col-md-3">
-
+                  
                 </div>
                 <div className="col-md-8">
                   <Card style={{ minHeight: '100%' }}>
@@ -36,12 +36,12 @@ const AboutPage = () => (
                   </Card>
                 </div>
               </Row>
-            </Col>
-            <Col md="4">
-              <Sidebar />
-            </Col>
-          </Row>
-        </div>
+            </div>
+          </Col>
+          <Col md="4">
+            <Sidebar />
+          </Col>
+        </Row>
       </section>
     </div>
 

@@ -7,38 +7,40 @@ import Post from '../components/post/post';
 import NavBar from "../components/NavigationBar/navbar"
 
 const tagPosts = ({ data, pageContext }) => {
-    const { tag } = pageContext;
-    const { totalCount } = data.allMarkdownRemark;
-    const pageHeader = `Found ${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${tag}"`
-    return (
-        <Layout>
-            <NavBar />
-            <div className="blog">
-                <h1> {pageHeader} </h1>
-                <Row>
-                    <Col md="8">
-                        {data.allMarkdownRemark.edges.map(({ node }) => (
-                            <Post
-                                key={node.id}
-                                slug={node.fields.slug}
-                                title={node.frontmatter.title}
-                                author={node.frontmatter.author}
-                                date={node.frontmatter.date}
-                                body={node.excerpt}
-                                tags={node.frontmatter.tags}
-                                fluid={node.frontmatter.image.childImageSharp.fluid}
-                            />
-                        ))}
-                    </Col>
-                    <Col md="4">
-                        <div>
-                            <Sidebar />
-                        </div>
-                    </Col>
-                </Row>
-            </div>
-        </Layout>
-    )
+  const { tag } = pageContext;
+  const { totalCount } = data.allMarkdownRemark;
+  const pageHeader = `Found ${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${tag}"`
+  return (
+    <Layout>
+      <NavBar />
+      <div className="blog">
+        <div className="post-container">
+          <h1> {pageHeader} </h1>
+          <Row>
+            <Col md="8">
+              {data.allMarkdownRemark.edges.map(({ node }) => (
+                <Post
+                  key={node.id}
+                  slug={node.fields.slug}
+                  title={node.frontmatter.title}
+                  author={node.frontmatter.author}
+                  date={node.frontmatter.date}
+                  body={node.excerpt}
+                  tags={node.frontmatter.tags}
+                  fluid={node.frontmatter.image.childImageSharp.fluid}
+                />
+              ))}
+            </Col>
+            <Col md="4">
+              <div>
+                <Sidebar />
+              </div>
+            </Col>
+          </Row>
+        </div>
+      </div>
+    </Layout>
+  )
 }
 
 export const tagQuery = graphql`
