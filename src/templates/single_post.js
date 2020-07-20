@@ -7,7 +7,7 @@ import NavBar from "../components/NavigationBar/navbar"
 import { Badge, Card, CardBody, CardSubtitle } from 'reactstrap'
 import Img from 'gatsby-image';
 import { Row, Col } from "reactstrap";
-import { slugify } from '../util/utilityFunctions';
+import { slugify } from '../util/utilityfunctions';
 import authors from '../util/authors';
 import { DiscussionEmbed } from 'disqus-react';
 

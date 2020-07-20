@@ -6,7 +6,7 @@ import SEO from "../components/seo";
 import { Button, Card, CardText, CardBody, CardTitle, Row, Col } from 'reactstrap';
 import AuthorImage from '../images/Profile.jpg';
 import authors from '../util/authors'
-import { slugify } from '../util/utilityFunctions';
+import { slugify } from '../util/utilityfunctions';
 
 const AboutPage = () => (
   <Layout>
