@@ -30,12 +30,12 @@ const NavBar = () => {
                                 to='/blog'>Blogs</Link>
                         </li>
                         <li>
-                            <Link className={window.location.href.indexOf('projects') > 0 ? 'link active' : 'link'}
-                                to='/projects'>Projects</Link>
-                        </li>
-                        <li>
                             <Link className={window.location.href.indexOf('about') > 0 ? 'link active' : 'link'}
                                 to='/about'>About</Link>
+                        </li>
+                        <li>
+                            <Link className={window.location.href.indexOf('tag/project') > 0 ? 'link active' : 'link'}
+                                to='/tag/project'>Projects</Link>
                         </li>
                         <li>
                             <Link className={window.location.href.indexOf('contact') > 0 ? 'link active' : 'link'}

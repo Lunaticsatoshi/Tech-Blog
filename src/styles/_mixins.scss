@@ -1,4 +1,4 @@
-@mixin clearfix {
+/* @mixin clearfix {
     &::after {
         content: "";
         display: table;
@@ -32,7 +32,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
 
 1em = 16px
 */
-@mixin respond($breakpoint) {
+/* @mixin respond($breakpoint) {
     @if $breakpoint == phone {
         @media only screen and (max-width: 37.5em) { @content };    //600px
     }
@@ -45,4 +45,90 @@ ORDER: Base + typography > general layout + grid > page layout > components
     @if $breakpoint == big-desktop {
         @media only screen and (min-width: 112.5em) { @content };    //1800
     }
+} */
+.contact__form{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 7px;
+    grid-column-start: 2;
+    grid-column-end: span 4;
+    grid-row-start: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 3.75rem;
+    margin: 3.75rem 0;
+}
+
+.field{
+    margin-bottom: 3.12rem;
+}
+
+.field__hidden{
+    display: none;
+}
+
+.field input, .field textarea {
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease 0s;
+    font-family: Muli,sans-serif;
+    font-size: 0.87rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.field input {
+    height: 2.5rem;
+}
+
+.field label {
+    font-family: Muli,sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    transition: all 0.3s ease 0s;
+}
+
+.field input:focus, .field textarea:focus {
+    border-bottom: 1px solid #c92424;
+}
+
+.submit{
+    text-align: center;
+    padding: 0;
+    margin: 1.875rem 0;
+}
+
+.btn__med{
+    width: 124px;
+    height: 38px;
+    border-radius: 25px;
+    background-color: red;
+    color: #ffffff;
+    border: none;
+    font-family: Muli, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    transition: all 0.3s ease 0s;
+}
+
+@media screen and (max-width: 800px){
+    .contact__form{
+        grid-column-start: 1;
+        grid-column-end: span 6;
+        grid-row-start: 2;
+    }
+}
+
+.contact__thanks{
+    height: 31.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

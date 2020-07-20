@@ -25,6 +25,12 @@
     color: #ffffff;
   }
 
+  p{
+    font-family: Muli, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
   .text-uppercase{
     border-radius: 25px;
     padding: 5px;
@@ -58,8 +64,16 @@
   flex-direction: column;
   margin: 5rem auto;
   padding: 0 10%;
-  /* width: 100%;
-  max-width: 1200px; */
+  max-width: 1200px;
+}
+
+.blog-front{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 5rem auto;
+  padding: 0 10%;
 }
 
 .advert-title{
@@ -69,7 +83,7 @@
 .section-title{
   text-align: center;
   font-family: Baskerville, serif;
-  font-size: 40px;
+  font-size: 3.5rem;
   font-weight: 400;
   line-height: 55px;
   color: #ffffff;
@@ -82,6 +96,14 @@
 .image-top{
   width: 100%;
   border-radius: 10px;
+}
+.about__subtitle{
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.about__section{
+  margin-top: 2rem;
 }
 
 
@@ -110,6 +132,15 @@
   flex-direction: column;
   padding: 0 0rem;
 }
+
+.contact-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 0rem;
+  margin-top: 7rem;
+  }
 
 .body-contents{
   margin-left: 10px;
@@ -160,14 +191,51 @@
   margin-top: 2rem;
 }
 
+/* .form-horizontal {
+  float: left;
+  max-width: 400px;
+  font-family: Muli, sans-serif;
+  font-weight: 400;
+}
+
+.form-control, textarea {
+  max-width: 400px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.send-button {
+  margin-top: 15px;
+  height: 34px;
+  width: 400px;
+  overflow: hidden;
+  transition: all .2s ease-in-out;
+}
+
+.button {
+  width: 400px;
+  height: 34px;
+  transition: all .2s ease-in-out;
+}
+
+.send-text {
+  display: block;
+  margin-top: 10px;
+  font: 300 14px 'Lato', sans-serif;
+  letter-spacing: 2px;
+}
+
+.button:hover {
+  transform: translate3d(0px, -29px, 0px);
+} */
+
 @media Screen and (max-Width: 768px){
   .blog{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 5rem auto;
-  
+    margin-top: 15rem;
   }
 
   /* .image-card-top{
@@ -186,5 +254,9 @@
     height: 25px;
     width: 100%;
     max-width: 25px;
+  }
+
+  .contact-container{
+  margin-top: 13rem;
   }
 }

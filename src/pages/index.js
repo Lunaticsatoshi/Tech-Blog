@@ -4,6 +4,7 @@ import SEO from "../components/seo";
 import '../styles/index.scss';
 import LatestPost from "../components/latest/latestpost";
 import NavBar from "../components/NavigationBar/navbar";
+import Featured from "../components/featured/featured";
 import Header from "../components/header/header";
 
 const IndexPage = () => (
@@ -11,7 +12,8 @@ const IndexPage = () => (
     <SEO title="Home" />
     <NavBar />
     <Header />
-    <div className="blog">
+    <div className="blog-front">
+      <Featured />
     <LatestPost />
     </div>
 

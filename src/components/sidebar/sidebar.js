@@ -9,7 +9,7 @@ const Sidebar = ({ authorImageFluid, postAuthor }) => (
         {postAuthor && (
             <Card>
                 <Img className="author-image" fluid={authorImageFluid} />
-                <CardBody>
+                <CardBody className="card-center">
                     <CardTitle className="text-center text-uppercase mb-3 author-name">
                         {postAuthor.name}
                     </CardTitle>
@@ -42,7 +42,7 @@ const Sidebar = ({ authorImageFluid, postAuthor }) => (
             </Card>
         )}
         <Card>
-            <CardBody>
+            <CardBody className="card-center">
                 <CardTitle className="text-center text-uppercase mb-3">
                     NewsLetter
                     </CardTitle>
@@ -57,7 +57,7 @@ const Sidebar = ({ authorImageFluid, postAuthor }) => (
             </CardBody>
         </Card>
         <Card>
-            <CardBody>
+            <CardBody className="card-center">
                 <CardTitle className="text-center text-uppercase advert-title">
                     Advertisement
                     </CardTitle>
@@ -65,7 +65,7 @@ const Sidebar = ({ authorImageFluid, postAuthor }) => (
             </CardBody>
         </Card>
         <Card>
-            <CardBody>
+            <CardBody className="card-center">
                 <CardTitle className="text-center text-uppercase mb-3">
                     Recent Posts
                     </CardTitle>

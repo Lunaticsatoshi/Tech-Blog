@@ -1,7 +1,7 @@
 
 .hero{
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=60);
-    height: 35rem;
+    height: 40rem;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -13,4 +13,34 @@
     align-items: center;
     color: #ffffff;
     font-size: 4rem;
+}
+.front{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.front__header{
+    color: #ffffff;
+    font-size: 3rem;
+    font-family: 'Pacifico', cursive;
+    text-transform: uppercase;
+}
+.header__subtitle{
+    font-size: 3rem;
+    margin: auto 5rem;
+    color: #ffffff;
+}
+
+@media screen and (max-Width: 768px){
+    .hero{
+        height: 55rem;
+    }
+    .front{
+        max-width: 50rem;
+    }
+    .header__subtitle{
+        display: none;
+    }
 }

@@ -6,7 +6,7 @@ const LatestPost = () => {
     return (
         <div className = "post-container">
             <div className = "section-head">
-                <h3 className = "section-title">Latest Post</h3>
+                <h3 className = "section-title">Latest Posts</h3>
             </div>
             <div className="division"></div>
             <div  className = 'section-content'>

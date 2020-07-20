@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <div className = "site-footer">
             <h4 className = "text-center">
-                Tech Blog
+                All Stack
             </h4>
             <p className = "text-center">
                 Follow us On Social Media
@@ -38,6 +38,9 @@ const Footer = () => {
                     </li>
                 </ul>
             </div>
+            <p className = "text-center">
+                Created by Lunaticsatoshi Copyright 2020 All rights reserved 
+            </p>
         </div>
     )
 }

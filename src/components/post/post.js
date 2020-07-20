@@ -14,7 +14,7 @@ const Post = ({ id, title, author, slug, date, body, fluid, tags}) => {
         <Link to={slug}>{title}</Link>
       </CardTitle>
       <CardSubtitle>
-        <span className="date">{date}</span> by{''}
+        <span className="date">{date}</span> by{' '}
         <p><span className="card-author">{author}</span></p>
       </CardSubtitle>
       <CardText className="card-body">{body}</CardText>

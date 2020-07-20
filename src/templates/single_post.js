@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Sidebar from "../components/sidebar/sidebar";
-import { graphql, StaticQuery, Link } from "gatsby";
+import { graphql, Link } from "gatsby";
 import NavBar from "../components/NavigationBar/navbar"
 import { Badge, Card, CardBody, CardSubtitle } from 'reactstrap'
 import Img from 'gatsby-image';
@@ -23,7 +23,7 @@ const SinglePost = ({ data, pageContext, location }) => {
     }
     return (
         <Layout>
-            <SEO title="SinglePost" />
+            <SEO title="SinglePost" keywords={[`gatsby`, `application`, `react`]} />
             <NavBar />
             <div className="blog">
                 <h1>{post.title}</h1>
@@ -78,7 +78,6 @@ const SinglePost = ({ data, pageContext, location }) => {
                     </Col>
                 </Row>
             </div>
-
         </Layout>
     )
 }

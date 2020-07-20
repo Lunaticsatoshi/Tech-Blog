@@ -3,8 +3,6 @@ import Layout from "../components/layout";
 import NavBar from "../components/NavigationBar/navbar";
 import Sidebar from "../components/sidebar/sidebar";
 import SEO from "../components/seo";
-import Img from 'gatsby-image';
-import { Link } from "gatsby";
 import { Button, Card, CardText, CardBody, CardTitle, Row, Col } from 'reactstrap';
 import AuthorImage from '../images/Profile.jpg';
 import authors from '../util/authors'
@@ -19,11 +17,19 @@ const AboutPage = () => (
         <Row>
           <Col md="8">
             <div className="post-container">
+              <h1>About Us</h1>
+              <div className="division"></div>
+              <div className="about__section">
+                <p className="about__subtitle">
+                  We are All Stack. We make Technology simplified for everyone through our Blogs and Projects.
+                </p>
+                <p className="about__subtitle">We love contributing to opensource on <a href="https://github.com/Lunaticsatoshi">Github</a></p>
+              </div>
               <h1>Our Team</h1>
               <div className="division"></div>
               <Row className="mb-4">
                 <div className="col-md-3">
-                  
+
                 </div>
                 <div className="col-md-8">
                   <Card style={{ minHeight: '100%' }}>
