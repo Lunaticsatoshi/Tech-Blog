@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
-import onClickOutside from 'react-onclickoutside';
+import { window } from 'browser-monads';
 import logo from '../../images/logo.svg';
 
 const NavBar = () => {
@@ -8,8 +8,6 @@ const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
-
-    NavBar.handleClickOutside = () => setIsOpen(false)
 
     return (
         <div>
@@ -27,19 +25,19 @@ const NavBar = () => {
                     <ul>
                         <li>
                             <Link className={window.location.href.indexOf('blog') > 0 ? 'link active' : 'link'}
-                                to='/blog'>Blogs</Link>
+                                to='/blog' onClick={toggle}>Blogs</Link>
                         </li>
                         <li>
                             <Link className={window.location.href.indexOf('about') > 0 ? 'link active' : 'link'}
-                                to='/about'>About</Link>
+                                to='/about' onClick={toggle}>About</Link>
                         </li>
                         <li>
                             <Link className={window.location.href.indexOf('tag/project') > 0 ? 'link active' : 'link'}
-                                to='/tag/project'>Projects</Link>
+                                to='/tag/project' onClick={toggle}>Projects</Link>
                         </li>
                         <li>
                             <Link className={window.location.href.indexOf('contact') > 0 ? 'link active' : 'link'}
-                                to='/contact'>Contact</Link>
+                                to='/contact' onClick={toggle} >Contact</Link>
                         </li>
                     </ul>
                 </nav>
@@ -48,8 +46,5 @@ const NavBar = () => {
     )
 }
 
-const clickOutsideConfig = {
-    handleClickOutside: () => NavBar.handleClickOutside
-}
 
-export default onClickOutside(NavBar, clickOutsideConfig);
+export default NavBar;

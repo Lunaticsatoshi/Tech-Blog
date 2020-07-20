@@ -1,5 +1,5 @@
 ---
-title: 'What defines a Tech Blog? - A beginners guide to the world of Tech blogging'
+title: 'What defines a Tech Blog? A beginners guide to the world of Tech blogging'
 date: 2020-06-05 07:00:00
 author: 'Lunaticsatoshi'
 image: ../../images/coding.jpg

@@ -1,5 +1,5 @@
 ---
-title: 'Is Flutter Gonna change the way we do cross-platform development?'
+title: 'Is Flutter Gonna change the way we do cross-platform development'
 date: 2020-06-05 07:00:00
 author: 'Lunaticsatoshi'
 image: ../../images/Flutter.jpg
